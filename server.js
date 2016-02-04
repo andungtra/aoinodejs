@@ -24,10 +24,12 @@ app.use(require('./middleware/validate-session'));
 var userRouter = require('./routes/user');
 var sessionRouter = require('./routes/session');
 var definitionRouter = require('./routes/definition');
+var logRouter = require('./routes/log');
 
 app.use('/api/users', userRouter);
 app.use('/api/login', sessionRouter);
 app.use('/api/definitions', definitionRouter);
+app.use('/api/logs', logRouter);
 
 app.use('/', function(req, res, next) {
     res.send('hello word');
